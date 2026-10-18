@@ -344,7 +344,61 @@ h3 { margin: 0 0 8px; font-size: 1.05rem; }
   transform-origin: bottom;
 }
 .bar-label { font-size: 0.78rem; color: var(--muted); }
-
+/* Pop-up saat timer habis */
+.alarm-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(43, 36, 32, 0.55);
+}
+.alarm-box {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.alarm-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.alarm-icon svg {
+  width: 36px;
+  height: 36px;
+  transform-origin: 50% 10%;
+  animation: bell-ring 0.9s ease-in-out 2;
+}
+@keyframes bell-ring {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(16deg); }
+  40% { transform: rotate(-14deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-6deg); }
+}
+.alarm-box h2 { margin: 0 0 8px; }
+.alarm-box p { margin: 0 0 22px; color: var(--muted); }
+#alarmClose {
+  padding: 12px 32px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 12px;
+  cursor: pointer;
+}
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
